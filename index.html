@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Script HERY - Bug WhatsApp</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <style>
+    body {
+      background-image: url('https://files.catbox.moe/19hx7g.jpg');
+      background-size: cover;
+      background-position: center;
+      background-attachment: fixed;
+      backdrop-filter: blur(4px);
+    }
+    .bg-overlay {
+      background: rgba(0, 0, 0, 0.75);
+    }
+  </style>
+</head>
+<body class="text-white font-sans">
+
+  <!-- Overlay Background -->
+  <div class="bg-overlay min-h-screen">
+
+    <!-- Navigation / Logo -->
+    <nav class="flex items-center justify-between p-6 border-b border-gray-700">
+      <div class="flex items-center space-x-4">
+        <img src="https://files.catbox.moe/c3mhg4.jpg" alt="Logo HERY" class="w-12 h-12 rounded-full border border-green-400">
+        <div>
+          <h1 class="text-2xl font-bold text-green-400">Script HERY</h1>
+          <p class="text-xs text-gray-400 -mt-1">Keamanan | Eksploit | Edukasi</p>
+        </div>
+      </div>
+      <div class="hidden md:flex space-x-6 text-sm text-gray-300">
+        <a href="#" class="hover:text-green-400">Beranda</a>
+        <a href="#bugs" class="hover:text-green-400">Jenis Bug</a>
+        <a href="#info" class="hover:text-green-400">Info Edukasi</a>
+        <a href="#contact" class="hover:text-green-400">Kontak</a>
+      </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="text-center py-20 px-4">
+      <h2 class="text-4xl md:text-5xl font-extrabold text-green-300 mb-4">Mengenal Fungsi Bug WhatsApp</h2>
+      <p class="max-w-2xl mx-auto text-lg text-gray-300">Situs ini membahas berbagai jenis bug, eksploitasi sistem, serta digital berbasis WhatsApp. Untuk tujuan mengetahui dan bukan untuk penyalahgunaan ke orang yang tidak bersalah.</p>
+    </header>
+
+    <!-- Bug List -->
+    <main class="max-w-5xl mx-auto px-6 py-10" id="bugs">
+      <section class="mb-12">
+        <h3 class="text-3xl font-bold text-green-300 mb-6">Jenis-Jenis Bug WhatsApp</h3>
+        <div class="grid md:grid-cols-2 gap-8 text-gray-200">
+          <div>
+            <h4 class="text-xl font-semibold text-white mb-1">Crash Android</h4>
+            <p>Menghantar satu pesan dengan spam dan mesej yang berukuran besar 1GB - 500GB+.</p>
+          </div>
+          <div>
+            <h4 class="text-xl font-semibold text-white mb-1">Blank Mesej</h4>
+            <p>Ketika mendapat satu mesej spam, jika ditekan WhatsApp menjadi kosong (blank).</p>
+          </div>
+          <div>
+            <h4 class="text-xl font-semibold text-white mb-1">Delay Mesej</h4>
+            <p>Pesan sudah dikirim tetapi tidak masuk (delay sampai berjam-jam).</p>
+          </div>
+          <div>
+            <h4 class="text-xl font-semibold text-white mb-1">Force Close</h4>
+            <p>Satu mesej masuk dan secara tiba-tiba WhatsApp terkeluar otomatis setiap kali dibuka.</p>
+          </div>
+          <div>
+            <h4 class="text-xl font-semibold text-white mb-1">Spam Call</h4>
+            <p>Mengirim panggilan spam berulang tanpa jawaban, membuat penerima terganggu.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Info Section -->
+      <section id="info" class="mb-12">
+        <h3 class="text-3xl font-bold text-green-300 mb-4">Tujuan Edukasi</h3>
+        <p class="text-gray-300 leading-relaxed">
+          Semua informasi dalam situs ini bertujuan untuk memberikan pengetahuan dan jenis bug terkait keamanan digital. Tim SCRIPT HERY hanya menyarankan penggunaan bug untuk pengujian sistem atau terhadap pelaku yang menyalahgunakan platform.
+        </p>
+      </section>
+
+      <!-- Support Button & Counter -->
+      <section class="text-center my-10">
+        <h3 class="text-xl font-bold text-green-300 mb-4">Support web ini</h3>
+        <button id="supportBtn" class="bg-green-500 hover:bg-green-600 text-white font-semibold py-2 px-6 rounded">
+          Support 👍
+        </button>
+        <p class="mt-4 text-gray-300">Jumlah Support Saat Ini : <span id="supportCount" class="font-bold text-white">0</span></p>
+      </section>
+
+      <!-- Contact -->
+      <section id="contact" class="text-center border-t border-gray-700 pt-10">
+        <h4 class="text-2xl font-semibold text-green-300 mb-2">Hubungi Kami</h4>
+        <p class="text-gray-400">Web ini cuma menceritakan info dan jenis bug. Sebarang pertanyaan sila email ke :</p>
+        <p class="mt-1 text-white font-bold">5vigmac7@gmail.com</p>
+      </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="text-center text-sm text-gray-500 py-6 border-t border-gray-700 mt-10">
+      &copy; 2025 Script HERY. All Type Bug. | Information Bug.
+    </footer>
+  </div>
+
+  <!-- Support Counter Script -->
+  <script>
+    const supportBtn = document.getElementById("supportBtn");
+    const supportCount = document.getElementById("supportCount");
+
+    // Ambil nilai support dari localStorage
+    let count = parseInt(localStorage.getItem("supportCount")) || 0;
+    supportCount.textContent = count;
+
+    // Saat tombol diklik
+    supportBtn.addEventListener("click", () => {
+      count++;
+      localStorage.setItem("supportCount", count);
+      supportCount.textContent = count;
+    });
+  </script>
+
+</body>
+</html>
